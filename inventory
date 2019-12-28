@@ -1,0 +1,4 @@
+# ansible inventory 
+
+[host]
+vagrant ansible_port=22 ansible_ssh_user=vagrant ansible_ssh_private_key_file=/home/chris/Vagrant/centos/.vagrant/machines/default/virtualbox/private_key

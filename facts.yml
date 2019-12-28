@@ -1,0 +1,8 @@
+---
+
+- hosts: host
+  vars:
+
+  tasks:
+  - name: gather facts to characterize system(s)
+    debug: msg="Computer {{ ansible_hostname }} is running {{ ansible_os_family }} or equivalent"
