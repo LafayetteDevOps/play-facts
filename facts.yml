@@ -1,8 +1,34 @@
 ---
 
-- hosts: host
+- hosts: localhost
+  connection: local
   vars:
 
-  tasks:
-  - name: gather facts to characterize system(s)
-    debug: msg="Computer {{ ansible_hostname }} is running {{ ansible_os_family }} or equivalent"
+  tasks:        
+  # display the varible data type  
+  - name: hostname and operating system distribution
+    debug:
+      msg: "This system, {{ ansible_hostname }}, is running {{ ansible_distribution}} {{ ansible_distribution_version }} ."
+
+  # simply printing the value of the fact which is Ansible UnSafe Text type    
+  - name: facts to characterize system
+    debug:
+      msg:
+        - "{{ ansible_architecture }}"
+        - "{{ ansible_processor[0:3] }}"
+
+  # accessing an element of dictionary
+  - name: description to be filled in later - dictionary
+    debug:
+      msg: "{{ ansible_apparmor.status }}"
+
+  # accessing a list
+  - name: description to be filled in later - list
+    debug:
+      msg: "{{ ansible_all_ipv4_addresses }}"
+
+  # accessing the second element of a list
+  - name: description to be filled in later - accessing an element
+    debug:
+      msg: "{{ ansible_all_ipv4_addresses[1] }}"
+
