@@ -4,7 +4,14 @@
   connection: local
   vars:
 
-  tasks:        
+  tasks:
+  # display the variable data type
+  - debug:
+      msg:
+        - " Data type of 'ansible_architecture'  is {{ ansible_architecture | type_debug }} "
+        - " Data type of 'ansible_apparmor' is {{ ansible_apparmor | type_debug }} "
+        - " Data type of 'ansible_all_ipv4_addresses' is {{ ansible_all_ipv4_addresses | type_debug }} "
+  
   # display the varible data type  
   - name: hostname and operating system distribution
     debug:
