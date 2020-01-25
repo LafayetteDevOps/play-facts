@@ -2,5 +2,5 @@
 
 Parameters to run play locally
 
- hosts: localhost
- connection: local
+  >  hosts: localhost
+  >  connection: local
